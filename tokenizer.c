@@ -20,14 +20,42 @@ char is_valid_character(char c){
 }
 
 
-char* find_word_start(char* str);
+char* find_word_start(char* str){
+    while(!is_valid_character(str) && *str != 0){
+        str++;
+    }
+    return str;
+}
 
 
-char* find_word_end(char* str);
+char* find_word_end(char* str){
+    while(is_valid_character(str) && *str != 0){
+        str++;
+    }
+    return str;
+}
 
-int count_words(char* str);
+int count_words(char* str){
 
-void copy_word(char* str, char* copy);
+    int count = 0;
+    while(*str!=0){
+        str = find_word_start(str);
+        str = find_word_end(str);
+        if(*str != 0){
+            count++;
+        }
+    str++;
+    }
+}
+
+void copy_word(char* str, char* copy){
+    str = find_word_start(str);
+    for(int i = 0;is_valid_character(str) && *str != 0;i++){
+        copy[i] = str[i];
+    }
+    str = find_word_end(str);
+
+}
 
 
 char** tokenize(char* str);
