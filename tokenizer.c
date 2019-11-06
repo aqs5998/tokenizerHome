@@ -58,7 +58,20 @@ void copy_word(char* str, char* copy){
 }
 
 
-char** tokenize(char* str);
+char** tokenize(char* str){
+
+        char** tokens;
+        for(int i = 0;i<tokens[i];i++){
+            for(int j = 0;j<tokens[i][j];j++){
+                
+            }
+        }
+
+}
+
+
+
+
 
 void print_tokens(char** tokens);
 
