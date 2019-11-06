@@ -96,14 +96,19 @@ static char* all_tests() {
 }
 
  int main(int argc, char **argv) {   
-    char *result = all_tests();
-
-    if (result != 0) 
+    //char *result = all_tests();
+    char result = 1;
+    /*if (result != 0) 
         printf("Failed test: %s\n", result);
     else 
         printf("ALL TESTS PASSED\n");
-    
+    */
     printf("Tests run: %d\n", tests_run);
+    printf("Does this work\n");
 
     return result != 0;
+    
+
+
+
  }
