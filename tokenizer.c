@@ -49,7 +49,6 @@ int count_words(char* str){
 
 void copy_word(char* str, char* copy){
     str = find_word_start(str);
-    copy = malloc(*str * sizeof(char*) + 1);
     for(int i = 0;is_valid_character(str) && *str != 0;i++){
         copy[i] = str[i];
     }
@@ -62,10 +61,8 @@ char** tokenize(char* str){
         int space = count_words(str);
         **tokens = malloc(space * sizeof(char*) + 2) ;
         for(int i = 0;*str!=0;i++){
-            (*(tokens+i) = malloc(string_length(*str) + 2));
-            char* word = *tokens;
-            copy_word(str, word)
-                *(*(tokens+i)+j);
+            str=find_word_start(str);
+            copy_word(str, *(tokens+i));
         }
 
 }
