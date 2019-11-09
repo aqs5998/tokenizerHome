@@ -53,9 +53,11 @@ int count_words(char* str){
 void copy_word(char* str, char* copy){
     str = find_word_start(str);
     copy = (char*)malloc(sizeof(char) * 2);
-    for(int i = 0;*str != 0;i++){ 
+    for(int i = 0;is_valid_character(*str);i++){ 
         copy[i] = str[i];
+        printf("%c", *(str));
         str++;
+        copy++;
     }
 }
 

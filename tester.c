@@ -5,6 +5,7 @@
 #include "tokenizer.c"
 #include "history.c"
 
+char* copy;
 /*
     The following is a simple testing script with a single example of input
     your code is expected to handle. The testing of your code should be more
@@ -32,11 +33,11 @@ static void test_string_length() {
     printf("Total words: %d\n", i);
     char* copy;
     copy_word(str, copy);
-    printf("%c", *copy+1);
+    printf("%c\n", *copy);
     //while(*copy != 0){
       //  printf("%c", *copy);
-        //copy++; 
-   // }
+      //  copy++; 
+    //}
     //char** tokens = tokenize(str);
     //print_tokens(tokens);
     return;  
@@ -116,12 +117,13 @@ static char* all_tests() {
 */
  int main(int argc, char **argv) {   
     /*char *result = all_tests();
-
+    
     if (result != 0) 
         printf("Failed test: %s\n", result);
     else 
         printf("ALL TESTS PASSED\n");
     */
+   char* copy;
    test_string_length();
     //printf("Tests run: %d\n", test_string_length());
 
