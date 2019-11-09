@@ -82,16 +82,16 @@ void copy_word(char* str, char* copy){
 		//*(tokens+i)+j contains the address of jth character of ith word
 		//*(*(tokens+i)+j) contains the char value of the jth character of the ith word
 char** tokenize(char* str){
-        char** tokens;
         char* word;
-        str = find_word_start(str);
         int space = count_words(str);
-        tokens = (char**)malloc(sizeof(char)*space)+2;
+        char** tokens = (char**)malloc((sizeof(char*)*space)+2);
         for(int i = 0;*str!=0;i++){
+            str = find_word_start(str);
             for(int j = 0;is_valid_character(*str);j++){
-                *(*(tokens+i)+j) = *str+i;
+                *(*(tokens+i)+j) = *(str+i);
             }
         }
+    return tokens;
 }
 
 void print_tokens(char** tokens){
