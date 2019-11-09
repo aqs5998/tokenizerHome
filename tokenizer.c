@@ -11,7 +11,7 @@ int string_length(char* str){
 
 
 char is_valid_character(char c){
-  if(c < 32 || c > 133){ //Wrong int values
+  if(c < 32 || c > 126){ //Wrong int values
         return 0;
     }
     else {
