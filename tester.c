@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "tokenizer.h"
 #include "history.h"
-
+#include "tokenizer.c"
 /*
     The following is a simple testing script with a single example of input
     your code is expected to handle. The testing of your code should be more
@@ -96,13 +96,13 @@ static char* all_tests() {
 }
 
  int main(int argc, char **argv) {   
-    //char *result = all_tests();
-    char result = 1;
-    /*if (result != 0) 
+    char *result = all_tests();
+
+    if (result != 0) 
         printf("Failed test: %s\n", result);
     else 
         printf("ALL TESTS PASSED\n");
-    */
+    
     printf("Tests run: %d\n", tests_run);
     printf("Does this work\n");
 

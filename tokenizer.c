@@ -12,7 +12,7 @@ int string_length(char* str){
 
 
 char is_valid_character(char c){
-  if(c < 32 || c > 126){ 
+  if(c > 33 || c < 126){ 
         return 0;
     }
     else {
@@ -74,7 +74,7 @@ char** tokenize(char* str){
             str = find_word_end(&str); // Str finds word end
             copy_word(&str, &word); //using & here and above is wrong. Gives address of the actual pointer instead of the
 	                            //address that the string starts at (the value of the pointer)
-            for(int j = 0;is_valid_char(str[j]);j++){ //for each char? If you're traversing chars here, condition should use is_valid_char
+            for(int j = 0;is_valid_character(str[j]);j++){ //for each char? If you're traversing chars here, condition should use is_valid_char
                 *(*(tokens+j)) = word;
 		//int j;
 		//for(j=0; is_valid_character(str[j]); j++)
@@ -91,9 +91,9 @@ char** tokenize(char* str){
 }
 
 void print_tokens(char** tokens){
-    return 0;
+    return ;
 }
 
 void free_tokens(char** tokens){
-    return 0;
+    return ;
 }
