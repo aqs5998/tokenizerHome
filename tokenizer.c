@@ -44,7 +44,8 @@ int count_words(char* str){
         if(*str != 0){
             count++; 
         }
-    } //return count
+    } 
+    return count; //return count
 }
 
 void copy_word(char* str, char* copy){
