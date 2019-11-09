@@ -52,10 +52,11 @@ int count_words(char* str){
 
 void copy_word(char* str, char* copy){
     str = find_word_start(str);
-    for(int i = 0;is_valid_character(*str) && *str != 0;i++){ 
-        *copy = *str;
+    copy = (char*)malloc(sizeof(char) * 2);
+    for(int i = 0;*str != 0;i++){ 
+        copy[i] = str[i];
+        str++;
     }
-    str++;
 }
 
 //Following is relevent since you are trying to copy the characters from str into their own isolated string like a double array

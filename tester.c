@@ -30,6 +30,13 @@ static void test_string_length() {
     printf("%c\n", *str);
     int i = count_words(str);
     printf("Total words: %d\n", i);
+    char* copy;
+    copy_word(str, copy);
+    printf("%c", *copy+1);
+    //while(*copy != 0){
+      //  printf("%c", *copy);
+        //copy++; 
+   // }
     //char** tokens = tokenize(str);
     //print_tokens(tokens);
     return;  
