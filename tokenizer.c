@@ -68,11 +68,11 @@ char** tokenize(char* str){
         **tokens = malloc(space * sizeof(char*) + 2); //Not sure if it's required, but might want to do (char**) malloc(blah blah)
 
         for(int i = 0;*str!=0;i++){ //for each word
-	    str=find_word_start(&str); //str is forever stuck at this word, need a find_word_end
+	        str=find_word_start(&str); 
+            str = find_word_end(&str); // Str finds word end
             copy_word(&str, &word); //using & here and above is wrong. Gives address of the actual pointer instead of the
 	                            //address that the string starts at (the value of the pointer)
-            
-            for(int j = 0;*str!=0;j++){ //for each char? If you're traversing chars here, condition should use is_valid_char
+            for(int j = 0;is_valid_char(str[j]);j++){ //for each char? If you're traversing chars here, condition should use is_valid_char
                 *(*(tokens+j)) = word;
 		//int j;
 		//for(j=0; is_valid_character(str[j]); j++)
@@ -86,15 +86,12 @@ char** tokenize(char* str){
 		//*(*(tokens+i)+j) contains the char value of the jth character of the ith word
             }
         }
-
-        
-
 }
 
+void print_tokens(char** tokens){
+    return 0;
+}
 
-
-
-
-void print_tokens(char** tokens);
-
-void free_tokens(char** tokens);
+void free_tokens(char** tokens){
+    return 0;
+}
