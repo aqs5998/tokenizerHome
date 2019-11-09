@@ -65,6 +65,7 @@ char** tokenize(char* str){
         for(int i = 0;*str!=0;i++){
             str=find_word_start(&str);
             copy_word(&str, &word);
+            
             for(int j = 0;*str!=0;j++){
                 *(*(tokens+j)) = word;//Double pointer pointing to a pointer incrementing the pointer
             }
