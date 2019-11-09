@@ -26,10 +26,12 @@ int tests_run;
 
 static void test_string_length() {
     //mu_assert("string_length('happy') == 5", string_length("happy") == 5);
-    char* str = "So this is a wierd fucking string\0";
+    char* str = "So this is a wierd fucking string. This assignment is driving me crazy. I'm starting to feel like an idiot. I don't know Joeseph anyone that doesn't know how to teach themselves this course on their own is screwed. Unless I had a teacher with me 24/7\0";
     printf("%c\n", *str);
-    char** tokens = tokenize(str);
-    print_tokens(tokens);
+    int i = count_words(str);
+    printf("Total words: %d\n", i);
+    //char** tokens = tokenize(str);
+    //print_tokens(tokens);
     return;  
 }
 /*

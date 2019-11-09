@@ -14,7 +14,7 @@ int string_length(char* str){
 
 
 char is_valid_character(char c){
-  if(c > 33 || c < 126){ 
+  if(c < 33 || c > 126){ 
         return 0;
     }
     else {
@@ -39,22 +39,21 @@ char* find_word_end(char* str){
 }
 
 int count_words(char* str){
-
     int count = 0;
     while(*str!=0){
         str = find_word_start(str);
-        str = find_word_end(str);
         if(*str != 0){
             count++; 
         }
+        str = find_word_end(str);
     } 
     return count; //return count
 }
 
 void copy_word(char* str, char* copy){
     str = find_word_start(str);
-    for(int i = 0;is_valid_character(*str) && *str != 0;i++){
-        copy[i] = str[i];
+    for(int i = 0;is_valid_character(*str) && *str != 0;i++){ 
+        *copy = *str;
     }
     str++;
 }
@@ -98,7 +97,6 @@ char** tokenize(char* str){
 
 void print_tokens(char** tokens){
     printf("Does print tokens work?");
-    printf("%c", *(*(tokens+3)+3));
     for(int i = 0;*(tokens+i) != 0;i++){
          printf("%d",i);
         for(int j = 0;*(*(tokens+i)+j) != 0;j++){
