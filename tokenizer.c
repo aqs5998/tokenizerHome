@@ -91,7 +91,14 @@ char** tokenize(char* str){
 }
 
 void print_tokens(char** tokens){
-    return ;
+    char s;
+    for (char *tokens = s; *tokens != NULL; tokens++) {
+    if (*tokens == ' ') {
+        *tokens = '\n';
+    }
+}
+    printf("%s", s);
+    return;
 }
 
 void free_tokens(char** tokens){
