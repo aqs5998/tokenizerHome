@@ -7,11 +7,12 @@ int string_length(char* str){
         i++;
         str++;
     } //return i
+    return i;
 }
 
 
 char is_valid_character(char c){
-  if(c < 32 || c > 126){ //Wrong int values
+  if(c < 32 || c > 126){ 
         return 0;
     }
     else {
