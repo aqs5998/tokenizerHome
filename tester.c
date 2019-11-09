@@ -32,7 +32,7 @@ static void test_string_length() {
     int i = count_words(str);
     printf("Total words: %d\n", i);
     char* copy;
-    copy_word(str, copy);
+    char** tokens = tokenize(str);
     printf("%c\n", *copy);
     //while(*copy != 0){
       //  printf("%c", *copy);

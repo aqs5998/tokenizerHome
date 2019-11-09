@@ -84,18 +84,14 @@ void copy_word(char* str, char* copy){
 char** tokenize(char* str){
         char** tokens;
         char* word;
+        str = find_word_start(str);
         int space = count_words(str);
-        //tokens = malloc(space * sizeof(char*) + 2); //Not sure if it's required, but might want to do (char**) malloc(blah blah)
-        for(int i = 0;*str!=0;i++){ //for each word
-	        str = find_word_start(str); 
-            copy_word(str, word); //using & here and above is wrong. Gives address of the actual pointer instead of the
-	                            //address that the string starts at (the value of the pointer)
-            for(int j = 0;is_valid_character(str[j]);j++){ 
-                 printf("%c\n", str[j]);//for each char? If you're traversing chars here, condition should use is_valid_char
-                *(tokens+j) = word; //Adding zero becuase I want to have the double pointer point to the new word at the beginning
+        tokens = (char**)malloc(sizeof(char)*space)+2;
+        for(int i = 0;*str!=0;i++){
+            for(int j = 0;is_valid_character(*str);j++){
+                *(*(tokens+i)+j) = *str+i;
             }
         }
-        return tokens;
 }
 
 void print_tokens(char** tokens){
