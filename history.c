@@ -13,8 +13,8 @@ typedef struct s_List {
 
 /* Initialize the linked list to keep the history. */
 List* init_history(){
-    s_List;
-    s_Item;
+    struct s_List new_list = (s_list)malloc(sizeof(s_list));
+    struct s_Item new_node = (s_item)malloc(sizeof(s_Item));
 }
 
 /* Add a history item to the end of the list.
@@ -22,8 +22,12 @@ List* init_history(){
    char* str - the string to store
 */
 void add_history(List* list, char* str){
+    if(list == NULL){
+        list->next = str;
+    }
+
     while(list != NULL){
-        
+
     }
 
 }

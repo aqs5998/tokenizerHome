@@ -3,6 +3,8 @@
 #include "tokenizer.h"
 #include "history.h"
 #include "tokenizer.c"
+#include "history.c"
+
 /*
     The following is a simple testing script with a single example of input
     your code is expected to handle. The testing of your code should be more
