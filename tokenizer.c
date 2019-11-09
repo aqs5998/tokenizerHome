@@ -69,7 +69,7 @@ char** tokenize(char* str){
         char** tokens;
         char* word;
         int space = count_words(str);
-        tokens = malloc(space * sizeof(char*) + 2); //Not sure if it's required, but might want to do (char**) malloc(blah blah)
+        //tokens = malloc(space * sizeof(char*) + 2); //Not sure if it's required, but might want to do (char**) malloc(blah blah)
 
         for(int i = 0;*str!=0;i++){ //for each word
 	        str = find_word_start(str); 
@@ -78,7 +78,10 @@ char** tokenize(char* str){
 	                            //address that the string starts at (the value of the pointer)
             for(int j = 0;is_valid_character(str[j]);j++){ //for each char? If you're traversing chars here, condition should use is_valid_char
                 *(tokens+j) = word; //Adding zero becuase I want to have the double pointer point to the new word at the beginning
-		//int j;
+		// *(tokens+1) -> points to word
+        // *(tokens+2) -> points to word
+        // *(tokens+3) -> points to word
+        //int j;
 		//for(j=0; is_valid_character(str[j]); j++)
 		    //*(*(tokens+i)+j) = word[j];
 		//*(*(tokens+i)+j) = 0;

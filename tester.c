@@ -117,8 +117,4 @@ static char* all_tests() {
     //printf("Tests run: %d\n", test_string_length());
 
     return 0;
-    
-
-
-
  }
