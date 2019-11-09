@@ -26,8 +26,8 @@ int tests_run;
 
 static void test_string_length() {
     //mu_assert("string_length('happy') == 5", string_length("happy") == 5);
-    char* str = "So this is a wierd fucking string";
-    printf("Does this work\n");
+    char* str = "So this is a wierd fucking string\0";
+    printf("%c\n", *str);
     char** tokens = tokenize(str);
     print_tokens(tokens);
     return;  
