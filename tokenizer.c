@@ -86,10 +86,8 @@ char** tokenize(char* str){
         int space = count_words(str);
         char** tokens = (char**)malloc((sizeof(char**)*space)+2);
         for(int i = 0;*str!=0;i++){
-            str = find_word_start(str);
             for(int j = 0;is_valid_character(*str);j++){
                 *(*(tokens+j)+i) = *(str+i);
-                str++;
             }
         }
     return tokens;
